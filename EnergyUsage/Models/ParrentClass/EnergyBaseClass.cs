@@ -9,5 +9,14 @@ namespace EnergyUsage.Models.ParrentClass
     abstract internal class EnergyBaseClass
     {
         public DateTime DayOfMeaurment { get; set; }
+
+        enum Rooms
+        {
+            Küche,
+            Flur,
+            Wohnzimmer,
+            Keller,
+            Schlafzimmer,
+        }
     }
 }

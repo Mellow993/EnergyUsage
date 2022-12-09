@@ -9,5 +9,6 @@ namespace EnergyUsage.Models.ChildClasses
 {
     internal class Current : EnergyBaseClass
     {
+        public double kWh { get; set; }
     }
 }

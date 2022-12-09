@@ -9,5 +9,6 @@ namespace EnergyUsage.Models.ChildClasses
 {
     internal class Water : EnergyBaseClass
     {
+        public double M3 { get; set; }
     }
 }
