@@ -8,9 +8,9 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <Button Command="{Binding OpenCommand}" Content="Open" HorizontalAlignment="Left" Margin="530,84,0,0" VerticalAlignment="Top" RenderTransformOrigin="10.854,1.004"/>
-        <TextBox HorizontalAlignment="Left" Margin="180,84,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Margin="190,129,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Margin="185,179,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBox Text="{Binding WaterConsumption}" HorizontalAlignment="Left" Margin="180,84,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Margin="190,129,0,0" TextWrapping="Wrap" Text="{Binding CurrentConsumption}" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Margin="185,179,0,0" TextWrapping="Wrap" Text="{Binding GasConsumption}" VerticalAlignment="Top" Width="120"/>
         <TextBox HorizontalAlignment="Left" Margin="190,229,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
         <Label Content="Wasserverbrauch" HorizontalAlignment="Left" Margin="35,79,0,0" VerticalAlignment="Top"/>
         <Label Content="Stromverbrauch" HorizontalAlignment="Left" Margin="45,134,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.526,0.579"/>

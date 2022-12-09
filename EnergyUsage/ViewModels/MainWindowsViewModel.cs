@@ -93,23 +93,17 @@ namespace EnergyUsage.ViewModels
 
         private void SetUpCommands()
         {
-            ExitCommand = new DelegateCommand(ExitProgramm);
-            ExportCommand = new DelegateCommand(ExportData);
             AddCommand = new DelegateCommand(Add);
+            ExportCommand = new DelegateCommand(ExportData);
+            ExitCommand = new DelegateCommand(ExitProgramm);
         }
 
 
         private void ExportData()
         {
-            Energy energy = new Energy(10,10,10);
-            Energy energy2 = new Energy(10,10,10);
-            Energy energy3 = new Energy(10,10,10);
-            Energy energy4 = new Energy(10,10,10);
+            Energy energy = new Energy(WaterConsumption, GasConsumption, CurrentConsumption);
 
             EngeryObjects.Add(energy);
-            EngeryObjects.Add(energy2);
-            EngeryObjects.Add(energy3);
-            EngeryObjects.Add(energy4);
 
             Export export = new Export(EngeryObjects);
             export.SaveJson();
