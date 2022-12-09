@@ -6,9 +6,12 @@ using System.Threading.Tasks;
 
 namespace EnergyUsage.Models.ParrentClass
 {
-    abstract internal class EnergyBaseClass
+    internal class Energy
     {
         public DateTime DayOfMeaurment { get; set; }
+        public double AmountOfWater { get; set; }
+        public double AmountOfGas { get; set; }
+        public double AmountOfCurrent { get; set; }
 
         enum Rooms
         {
@@ -17,6 +20,14 @@ namespace EnergyUsage.Models.ParrentClass
             Wohnzimmer,
             Keller,
             Schlafzimmer,
+        }
+
+        public Energy(double amountOfWater, double amountOfGas, double amountOfCurrent)
+        {
+            //DayOfMeaurment = dayOfMeaurment;
+            AmountOfWater = amountOfWater;
+            AmountOfGas = amountOfGas;
+            AmountOfCurrent = amountOfCurrent;
         }
     }
 }
