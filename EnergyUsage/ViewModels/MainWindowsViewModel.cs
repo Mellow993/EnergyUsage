@@ -18,10 +18,74 @@ namespace EnergyUsage.ViewModels
         private IRepository _repository;
         List<Energy> EngeryObjects = new List<Energy>();
 
-        public DelegateCommand OpenCommand { get; private set; }
-        public DelegateCommand ExportCommand { get; private set; }
+        #region Fields
+        private double _waterConsumption;
+        private double _gasConsumption;
+        private double _currentConsumption;
+        private DateOnly _today;
+        #endregion
 
-        internal MainWindowsViewModel(IRepository repository) 
+        #region Properties
+        public DateOnly Today
+        {
+            get => _today;
+            set
+            {
+                if(_today != value)
+                {
+                    _today = value;
+                    OnPropertyChanged(nameof(Today));
+                }
+            }
+        }
+        public double WaterConsumption
+        {
+            get => _waterConsumption;
+            set
+            {
+                if(_waterConsumption != value)
+                {
+                    _waterConsumption = value;
+                    OnPropertyChanged(nameof(WaterConsumption));
+                }
+            }
+        }
+        public double GasConsumption
+        {
+            get => _gasConsumption;
+            set
+            {
+                if(_gasConsumption != value)
+                {
+                    _gasConsumption = value;
+                    OnPropertyChanged(nameof(GasConsumption));
+                }
+            }
+        }
+        public double CurrentConsumption
+        {
+            get => _currentConsumption;
+            set
+            {
+                if(_currentConsumption != value)
+                {
+                    _currentConsumption = value;
+                    OnPropertyChanged(nameof(CurrentConsumption));
+                }
+            }
+        }
+        #endregion
+
+
+        #region DelegateCommands
+
+        public DelegateCommand OpenCommand { get; private set; }
+        public DelegateCommand AddCommand { get; private set; }
+        public DelegateCommand ExportCommand { get; private set; }
+        public DelegateCommand ExitCommand { get; private set; }
+        #endregion
+
+        internal MainWindowsViewModel(IRepository repository)
         {
             _repository = repository;
             SetUpCommands();
@@ -29,11 +93,13 @@ namespace EnergyUsage.ViewModels
 
         private void SetUpCommands()
         {
-            OpenCommand = new DelegateCommand(OpenInputWindow);
-            //ExportCommand = new DelegateCommand(ExportData);
+            ExitCommand = new DelegateCommand(ExitProgramm);
+            ExportCommand = new DelegateCommand(ExportData);
+            AddCommand = new DelegateCommand(Add);
         }
 
-        private void OpenInputWindow()
+
+        private void ExportData()
         {
             Energy energy = new Energy(10,10,10);
             Energy energy2 = new Energy(10,10,10);
@@ -52,10 +118,17 @@ namespace EnergyUsage.ViewModels
 
         }
 
+        #region Prviate Methods
 
-        //private void OpenInputWindow()
-        //{
-        //    MessageBox.Show("open");
-        //}
+        private void Add()
+        {
+
+        }
+        private void ExitProgramm()
+        {
+            Application.Current.Shutdown();
+        }
+        #endregion
+
     }
 }

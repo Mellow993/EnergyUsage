@@ -7,7 +7,18 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Button Command="{Binding OpenCommand}" Content="Open" HorizontalAlignment="Left" Margin="130,134,0,0" VerticalAlignment="Top"/>
+        <Button Command="{Binding OpenCommand}" Content="Open" HorizontalAlignment="Left" Margin="530,84,0,0" VerticalAlignment="Top" RenderTransformOrigin="10.854,1.004"/>
+        <TextBox HorizontalAlignment="Left" Margin="180,84,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Margin="190,129,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Margin="185,179,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Margin="190,229,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Wasserverbrauch" HorizontalAlignment="Left" Margin="35,79,0,0" VerticalAlignment="Top"/>
+        <Label Content="Stromverbrauch" HorizontalAlignment="Left" Margin="45,134,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.526,0.579"/>
+        <Label Content="Gasverbrauch" HorizontalAlignment="Left" Margin="60,189,0,0" VerticalAlignment="Top"/>
+        <Label Content="Datum" HorizontalAlignment="Left" Margin="58,249,0,0" VerticalAlignment="Top"/>
+        <DatePicker HorizontalAlignment="Left" Margin="31,35,0,0" VerticalAlignment="Top"/>
+        <Button Command="{Binding ExportCommand}" Content="Als Json speichern" HorizontalAlignment="Left" Margin="500,154,0,0" VerticalAlignment="Top"/>
+        <Button Content="Beenden" HorizontalAlignment="Left" Margin="510,204,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>
