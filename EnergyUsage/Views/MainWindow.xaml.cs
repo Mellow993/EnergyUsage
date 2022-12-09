@@ -1,4 +1,8 @@
-﻿using System;
+﻿using EnergyUsage.Common.Interfaces;
+using EnergyUsage.Common.Repo;
+using EnergyUsage.ViewModels;
+using EnergyUsage.Views;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,10 +22,14 @@ namespace EnergyUsage
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainWindow : Window 
     {
+
         public MainWindow()
         {
+            IRepository repository = new Repository();
+            MainWindowsViewModel mainWindowsViewModel = new MainWindowsViewModel(repository);
+            DataContext = mainWindowsViewModel;
             InitializeComponent();
         }
     }

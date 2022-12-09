@@ -1,5 +1,7 @@
-﻿using System;
+﻿using EnergyUsage.Common.Interfaces;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,5 +25,18 @@ namespace EnergyUsage.Views
         {
             InitializeComponent();
         }
+
+
+        public bool? Open()
+        {
+            return this.ShowDialog();
+        }
+
+        protected override void OnClosing(CancelEventArgs e)
+        {
+            this.Visibility = Visibility.Collapsed;
+        }
     }
+
+
 }

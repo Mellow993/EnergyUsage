@@ -2,18 +2,16 @@
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
-    <Nullable>enable</Nullable>
+    <TargetFramework>net6.0-windows</TargetFramework>
+
+	  <Nullable>enable</Nullable>
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Asserts\Icons\" />
-    <Folder Include="Asserts\Styles\" />
-    <Folder Include="Interfaces\" />
-    <Folder Include="Converters\" />
-    <Folder Include="Logic\" />
-    <Folder Include="Repository\" />
+    <Folder Include="Common\Asserts\Icons\" />
+    <Folder Include="Common\Asserts\Styles\" />
+    <Folder Include="Common\Converters\" />
   </ItemGroup>
 
 </Project>

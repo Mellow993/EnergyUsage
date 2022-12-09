@@ -5,8 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:EnergyUsage.Views"
         mc:Ignorable="d"
-        Title="InputValues" Height="450" Width="800">
+        Title="InputValues" Height="200" Width="200">
     <Grid>
-        
+        <Label Content="Neues Fenster offen" HorizontalAlignment="Left" Margin="40,88,0,0" VerticalAlignment="Top"/>
+
     </Grid>
 </Window>
