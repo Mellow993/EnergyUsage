@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EnergyUsage.Models.ParrentClass;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,10 +9,19 @@ namespace EnergyUsage.Common
 {
     internal class Export
     {
-        private readonly object _object;
-        public Export(object myobject)
+        private readonly Energy _energy;
+        public Export(Energy energy)
         {
-            _object = myobject;
+            _energy = energy;
+        }      
+        
+        public Export()
+        {
+        }
+
+        public void SaveJson()
+        {
+
         }
 
 
