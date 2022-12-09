@@ -16,6 +16,7 @@ namespace EnergyUsage.ViewModels
     internal class MainWindowsViewModel : ViewModelBase
     {
         private IRepository _repository;
+        List<Energy> EngeryObjects = new List<Energy>();
 
         public DelegateCommand OpenCommand { get; private set; }
         public DelegateCommand ExportCommand { get; private set; }
@@ -29,13 +30,22 @@ namespace EnergyUsage.ViewModels
         private void SetUpCommands()
         {
             OpenCommand = new DelegateCommand(OpenInputWindow);
-            ExportCommand = new DelegateCommand(ExportData);
+            //ExportCommand = new DelegateCommand(ExportData);
         }
 
-        private void ExportData()
+        private void OpenInputWindow()
         {
             Energy energy = new Energy(10,10,10);
-            Export export = new Export(energy);
+            Energy energy2 = new Energy(10,10,10);
+            Energy energy3 = new Energy(10,10,10);
+            Energy energy4 = new Energy(10,10,10);
+
+            EngeryObjects.Add(energy);
+            EngeryObjects.Add(energy2);
+            EngeryObjects.Add(energy3);
+            EngeryObjects.Add(energy4);
+
+            Export export = new Export(EngeryObjects);
             export.SaveJson();
 
 
@@ -43,9 +53,9 @@ namespace EnergyUsage.ViewModels
         }
 
 
-        private void OpenInputWindow()
-        {
-            MessageBox.Show("open");
-        }
+        //private void OpenInputWindow()
+        //{
+        //    MessageBox.Show("open");
+        //}
     }
 }
