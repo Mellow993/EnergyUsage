@@ -23,7 +23,7 @@ namespace EnergyUsage.Common
         }
 
         public async void SaveJson()
-        {
+        { 
             await using FileStream createStream = File.Create(@"C:\Users\Lenovo\source\repos\BenfordSet\energy.json");
             await JsonSerializer.SerializeAsync(createStream,_energy);     
         }
